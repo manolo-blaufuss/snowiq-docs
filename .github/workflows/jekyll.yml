@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Build Jekyll site.
+      uses: fabacab/jekyll-builder-for-github-pages-action@v1
     - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
       run: |
