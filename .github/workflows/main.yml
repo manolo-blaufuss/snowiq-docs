@@ -36,6 +36,7 @@ jobs:
       # Login to Dockerhub
       - name: login to Dockerhub
         run: |
+            echo "Login to DockerHub with username:{{secrets.$DOCKER_HUB_USERNAME}}"
             docker login -u {{secrets.$DOCKER_HUB_USERNAME}}
             {{secrets.$DOCKER_HUB_ACCESS_TOKEN}}
 
