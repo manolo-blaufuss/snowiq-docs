@@ -23,16 +23,16 @@ jobs:
       # Login to Dockerhub
       - name: login to Dockerhub
         run: |
-            echo "Login to DockerHub with username:{{secrets.DOCKER_HUB_USERNAME}}"
-            docker login -u {{secrets.DOCKER_HUB_USERNAME}}
-            {{secrets.DOCKER_HUB_ACCESS_TOKEN}}
+            echo "Login to DockerHub with username:${{secrets.DOCKER_HUB_USERNAME}}"
+            docker login -u ${{secrets.DOCKER_HUB_USERNAME}}
+            ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
       # Build Docker image
       - name: Build Docker image
-        run: docker build -t {{secrets.DOCKER_HUB_USERNAME}}/snowiq-docs .
+        run: docker build -t ${{secrets.DOCKER_HUB_USERNAME}}/snowiq-docs .
 
       # Push Docker image to DockerHub
       - name: Build Docker image
-        run: docker push {{secrets.DOCKER_HUB_USERNAME}}/snowiq-docs
+        run: docker push ${{secrets.DOCKER_HUB_USERNAME}}/snowiq-docs
 
 
