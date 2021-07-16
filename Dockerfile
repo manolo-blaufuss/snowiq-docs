@@ -8,8 +8,6 @@ COPY . .
 
 RUN gem install bundler
 
-EXPOSE 4000
-
 RUN chmod +rwx $GEM_HOME
 RUN bundle update
 
