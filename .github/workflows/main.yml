@@ -1,0 +1,37 @@
+name: CI
+
+on:
+
+  push:
+    branches: [ deployment ]
+  pull_request:
+    branches: [ deployment ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Login to Dockerhub
+      - name: login to Dockerhub
+        run: |
+            docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}}
+
+
+      # Build Docker image
+      - name: Build Docker image
+        run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/snowiq-docs .
+
+      # Push Docker image to DockerHub
+      - name: Build Docker image
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/snowiq-docs
+
+
