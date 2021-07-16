@@ -6,11 +6,11 @@ ENV PATH "$HOME/gems/bin:$PATH"
 
 COPY . .
 
-RUN gem install bundler
-
 EXPOSE 4000
+
+RUN gem install bundler
 
 RUN chmod +rwx $GEM_HOME
 RUN bundle update
 
-
+CMD ["bundle", "exec", "jekyll", "serve", "--livereload", "--host", "0.0.0.0"]
