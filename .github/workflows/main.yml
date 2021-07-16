@@ -23,9 +23,7 @@ jobs:
       # Login to Dockerhub
       - name: login to Dockerhub
         run: |
-            echo "Login to DockerHub with username:${{secrets.DOCKER_HUB_USERNAME}}"
-            docker login -u ${{secrets.DOCKER_HUB_USERNAME}}
-            ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
+            docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}}
 
       # Build Docker image
       - name: Build Docker image
