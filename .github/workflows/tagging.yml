@@ -1,0 +1,15 @@
+name: Bump version
+#https://github.com/marketplace/actions/github-tag-with-semantic-versioning
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Bump version and push tag
+        uses: hennejg/github-tag-action@v4.1.jh1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
