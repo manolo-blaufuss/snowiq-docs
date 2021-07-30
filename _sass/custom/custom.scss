@@ -17,7 +17,7 @@ h1.content-android , h1.content-ios {
   -webkit-appearance: none;
   }
   
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     position: relative;
     background: rgba(0, 0, 0, 0.1);
     width: 9px;
@@ -27,18 +27,19 @@ h1.content-android , h1.content-ios {
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.25s linear;
-  }
+}
   
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: transparent;
-  }
+}
   
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: #a8bbbf;
-  }
-  body {
+}
+
+body {
     background-color: $sidebar-color;
-  }
+}
 
 // left side-bar
 .side-bar {
