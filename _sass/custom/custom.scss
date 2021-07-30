@@ -12,30 +12,34 @@ h1.content-android , h1.content-ios {
   margin-top: 8px;
 }
 
-
-// custom scrollbar
+// custom scrollbar for main content
 ::-webkit-scrollbar {
--webkit-appearance: none;
-}
-
+  -webkit-appearance: none;
+  }
+  
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    width: 9px;
+    border-radius: 3px;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.25s linear;
 }
-
+  
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+    background-color: transparent;
 }
-
+  
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a8bbbf;
-}
-body {
-  background-color: $sidebar-color;
+    background-color: #a8bbbf;
 }
 
+body {
+    background-color: $sidebar-color;
+}
 
 // left side-bar
 .side-bar {
@@ -179,6 +183,7 @@ body {
 .main {
 
   background-color: #FFFFFF;
+  overflow-y: auto;
 
 @include mq(md) {
   position: relative;
