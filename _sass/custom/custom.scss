@@ -4,10 +4,11 @@
 }
 
 // android content
-.content-android{
+.content-android {
 
 }
 
+// OS specific headings
 h1.content-android , h1.content-ios {
   margin-top: 8px;
 }
@@ -15,25 +16,38 @@ h1.content-android , h1.content-ios {
 
 // custom scrollbar
 ::-webkit-scrollbar {
--webkit-appearance: none;
+  @include mq(sm) {
+    -webkit-appearance: none;
+    width: 8px;
+  }
 }
-
+  
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
+  @include mq(sm) {  
+    background-color: #0d6ce02d;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
 }
-
+  
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  @include mq(sm) {  
+    background-color: transparent;
+  }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #a8bbbf;
+body::-webkit-scrollbar-track {
+  @include mq(lg) {  
+    background-color: $sidebar-color;
+  }
 }
-body {
-  background-color: $sidebar-color;
+  
+::-webkit-scrollbar-thumb:hover {
+  @include mq(sm) {
+    background-color: #0d6ce093;
+  }
+  
 }
 
 
