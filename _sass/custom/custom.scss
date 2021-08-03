@@ -13,9 +13,9 @@ h1.content-android , h1.content-ios {
   margin-top: 8px;
 }
 
-
-// custom scrollbar
+// custom scrollbar for main content
 ::-webkit-scrollbar {
+
   @include mq(sm) {
     -webkit-appearance: none;
     width: 8px;
@@ -47,9 +47,7 @@ body::-webkit-scrollbar-track {
   @include mq(sm) {
     background-color: #0d6ce093;
   }
-  
 }
-
 
 // left side-bar
 .side-bar {
@@ -193,6 +191,7 @@ body::-webkit-scrollbar-track {
 .main {
 
   background-color: #FFFFFF;
+  overflow-y: auto;
 
 @include mq(md) {
   position: relative;
