@@ -4,41 +4,49 @@
 }
 
 // android content
-.content-android{
+.content-android {
 
 }
 
+// OS specific headings
 h1.content-android , h1.content-ios {
   margin-top: 8px;
 }
 
 // custom scrollbar for main content
 ::-webkit-scrollbar {
-  -webkit-appearance: none;
+
+  @include mq(sm) {
+    -webkit-appearance: none;
+    width: 8px;
   }
+}
   
 ::-webkit-scrollbar-thumb {
-    position: relative;
-    background: rgba(0, 0, 0, 0.1);
-    width: 9px;
-    border-radius: 3px;
-    top: 0;
-    z-index: 2;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.25s linear;
+  @include mq(sm) {  
+    background-color: #0d6ce02d;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
 }
   
 ::-webkit-scrollbar-track {
+  @include mq(sm) {  
     background-color: transparent;
+  }
+}
+
+body::-webkit-scrollbar-track {
+  @include mq(lg) {  
+    background-color: $sidebar-color;
+  }
 }
   
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #a8bbbf;
-}
-
-body {
-    background-color: $sidebar-color;
+  @include mq(sm) {
+    background-color: #0d6ce093;
+  }
 }
 
 // left side-bar
