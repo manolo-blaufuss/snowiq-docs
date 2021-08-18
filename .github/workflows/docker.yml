@@ -7,11 +7,11 @@ name: Publish Docker image
 
 on:
   push:
-    branches: [ deployment ]
+    branches: [ docker-new ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ deployment ]
+    branches: [ docker-new ]
 
 jobs:
   push_to_registry:
