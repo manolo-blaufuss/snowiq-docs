@@ -6,7 +6,12 @@
 name: Publish Docker image
 
 on:
-  page_build:
+  push:
+    branches: [ deployment ]
+    # Publish semver tags as releases.
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ deployment ]
 
 jobs:
   push_to_registry:
