@@ -13,4 +13,4 @@ RUN gem install bundler
 RUN chmod +rwx $GEM_HOME
 RUN bundle update
 
-CMD ["bundle", "exec", "jekyll", "serve", "--livereload", "--host", "0.0.0.0"]
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
