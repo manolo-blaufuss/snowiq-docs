@@ -7,10 +7,12 @@ name: Publish Docker image
 
 on:
   pull_request:
+    types: [closed]
     branches: [ docker-new ]
 
 jobs:
   push_to_registry:
+    if: github.event.pull_request.merged == true
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
@@ -40,5 +42,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/snowiq-docs:${{ steps.date.outputs.date }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/snowiq-docs:${{ steps.date.outputs.date }}-${{ github.event.pull_request.number }}
           labels: ${{ steps.meta.outputs.labels }}
