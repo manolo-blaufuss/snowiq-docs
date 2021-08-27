@@ -8,7 +8,7 @@ name: Publish Docker image
 on:
   pull_request:
     types: [closed]
-    branches: [ docker-new ]
+    branches: [ docker-deployment ]
 
 jobs:
   push_to_registry:
